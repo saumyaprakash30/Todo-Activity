@@ -1,2 +1,2 @@
-#ToDo activity
-An activity that maintain list of todos.
+##ToDo activity
+#An activity that maintain list of todos.
