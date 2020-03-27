@@ -1,7 +1,7 @@
 import gi
 gi.require_version('Gtk', '3.0')
-from gi.repository import Gtk,GLib
-from gi.repository import Gdk
+from gi.repository import Gtk
+
 from sugar3.activity import activity
 from sugar3.graphics.toolbarbox import ToolbarBox
 from sugar3.activity.widgets import ActivityButton
@@ -10,9 +10,10 @@ from sugar3.activity.widgets import StopButton
 from sugar3.activity.widgets import ShareButton
 from sugar3.activity.widgets import DescriptionItem
 
+
 class listForm(Gtk.Box):
     def __init__(self):
-        Gtk.Box.__init__(self,orientation = Gtk.Orientation.HORIZONTAL)
+        Gtk.Box.__init__(self, orientation=Gtk.Orientation.HORIZONTAL)
         self.set_margin_left(5)
         self.set_margin_top(5)
         self.b1 = Gtk.CheckButton()
@@ -44,7 +45,7 @@ class listForm(Gtk.Box):
 
     
 class getThingDone(activity.Activity):
-    def __init__(self,handle):
+    def __init__(self, handle):
         """Set up the ToDo activity."""
         activity.Activity.__init__(self, handle)
 
@@ -85,43 +86,18 @@ class getThingDone(activity.Activity):
         toolbar_box.show()
 
         self.scrollabeWindow = Gtk.ScrolledWindow()
-        # self.window.add(self.scrollabeWindow)
+        
         self.vbox = Gtk.Box(orientation= Gtk.Orientation.VERTICAL)
         self.scrollabeWindow.add(self.vbox)
         self.todo = {}
         self.count = 0
-        self.btnAdd = Gtk.Button(label = "Add")
-        self.btnAdd.connect("clicked",self.create)
-        # self.vbox.pack_start(self.btnAdd,False,False,0)
+        
         self.create()
         
         
         self.set_canvas(self.scrollabeWindow)
         self.scrollabeWindow.show_all()
 
-        # self.vbox.connect("activate",self.create)
-        # self.scrollabeWindow.set_halign(Gtk.Align.START)
-        # self.scrollabeWindow.set_valign(Gtk.Align.START)
-        # self.vbox2 = Gtk.Box(orientation= Gtk.Orientation.VERTICAL)
-        # self.l1 = listForm()
-        # self.l1.btn_del.hide()
-        # self.vbox.pack_start(self.l1,False,False,0)
-        # self.l1.label.connect("activate",self.create,self.l1)
-        # b = Gtk.Button(label="add")
-        # self.vbox.pack_start(b,False,False,0)
-        # self.vbox.pack_start(self.vbox2,False,False,0)
-        # b.connect('clicked',self.create)
-        # # self.l1.btn_del.connect('clicked',self.delete)
-        # self.l1.label.connect('activate',self.create)
-        
-        # # self.b = Gtk.Button(label="ffff")
-        # # self.scrollabeWindow.add(self.b)
-        # # self.scrollabeWindow.remove(self.l1)
-
-
-
-        # self.window.show_all()
-        # Gtk.main()
 
     def create(self):
         self.count+=1
