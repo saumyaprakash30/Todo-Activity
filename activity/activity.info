@@ -1,0 +1,10 @@
+[Activity]
+name = ToDo
+bundle_id = net.flossmanuals.ToDo
+icon = icon
+exec = sugar-activity3 getThingsDone.getThingDone
+show_launcher = no
+activity_version = 1
+mime_types = text/plain;application/zip
+license = GPLv2+
+summary = ToDo list.
